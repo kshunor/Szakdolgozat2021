@@ -1,2 +1,8 @@
 # Szakdolgozat2021
-Szakldolgozat készétéséhez készített és használt forráskódok
+Hálózati sérülékenység felderítés című Szakdolgozat témájában készített program.: 
+
+nmappaeser.py - nmmapper git oldalrol atvett parser, egyik modulja atalakitva a kivant cel elerese erdekebn (filter_top_ports metódus). 
+python3-nmap könyvtarak telepitese utan az /usr/local/lib/python3.9/dist-packages/nmap3/nmapparser.py scriptet le kell cserélni a kshunor fiók alatti verzióra.
+
+subnetexplorer.py - a program hálózat feltérképezésre és sérülékenység vizsgálat céljából. 
+Fuggosegek telepitese: requirements.txt
