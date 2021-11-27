@@ -1,0 +1,23 @@
+#a következő csomagok telepítése szükséges. (Debian/Ubuntu/Kali)
+sudo apt-get update
+sudo apt install python3-pip
+sudo pip install python3-nmap
+sudo pip install python-crontab
+
+# le kell cserélned a python3-nmap könyvtár nmapparser.py szkriptet a módosítottra
+# toltsd le innen a módosított nmapparser.py szkriptet valahova, pl.: /home/temp1
+
+mkdir /home/temp1
+# masold ebbe a temp1 folderbe a szkriptet.
+# mentsd el az eredetit mas neven, majd az eredetit ird felül a módisítottal
+cp /usr/local/lib/python3.9/dist-packages/nmap3/nmapparser.py /usr/local/lib/python3.9/dist-packages/nmap3/nmapparser.py.bak
+cp -f /home/temp1/nmapparser.py /usr/local/lib/python3.9/dist-packages/nmap3/nmapparser.py
+
+#datbázis létrehozása
+wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add –
+echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/5.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+sudo systemctl start mongod
+sudo systemctl status mongod
+sudo systemctl enable mongod
