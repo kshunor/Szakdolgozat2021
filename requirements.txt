@@ -2,6 +2,7 @@
 sudo apt-get update
 sudo apt install python3-pip
 sudo pip install python3-nmap
+sudo apt-get install python3-pymongo
 sudo pip install python-crontab
 
 # le kell cserélned a python3-nmap könyvtár nmapparser.py szkriptet a módosítottra
